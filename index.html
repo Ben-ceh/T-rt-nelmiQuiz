@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .kiskep{
+        width: 100px;
+    }
+</style>
+<body>
+<div style="float:left;width:50%;height:600px;text-align: center;">
+<img onclick="nagyit(0)" src="0.jpg" alt="" class="kiskep" >
+<img onclick="nagyit(1)" src="1.jpg" alt="" class="kiskep" >
+<img onclick="nagyit(2)" src="2.jpg" alt="" class="kiskep" >
+<img onclick="nagyit(3)" src="3.jpg" alt="" class="kiskep" >
+<img onclick="nagyit(4)" src="4.jpg" alt="" class="kiskep" >
+<br>
+<img src="" alt="" id="nagykep" >
+</div> 
+
+<div style="text-align: center;">
+    <div id="kepForCiklus"></div>
+    <br>
+    <img src="" alt="" id="nagykepJobb">
+    </div> 
+
+<script>
+function nagyit( kepSzam ){
+    document.getElementById("nagykep").src= kepSzam+".jpg"
+}
+let szoveg=""
+for (let i = 0; i < 5; i++) {
+    szoveg+=`<img onclick="nagyitFor(${i})" src="${i}.jpg" alt="" class="kiskep" >`
+}
+document.getElementById("kepForCiklus").innerHTML=szoveg
+
+function nagyitFor( kepSzam ){
+    document.getElementById("nagykepJobb").src= kepSzam+".jpg"
+}
+
+</script>
+
+</body>
+</html>
